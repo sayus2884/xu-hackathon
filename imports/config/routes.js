@@ -17,7 +17,7 @@ FlowRouter.route('/', {
    },
 });
 
-FlowRouter.route('/:id', {
+FlowRouter.route('/book/:id', {
    name: 'Book.show',
    action() {
       mount(MainLayout, {
