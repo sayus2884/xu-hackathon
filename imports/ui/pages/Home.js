@@ -27,7 +27,7 @@ class Home extends Component {
 
    renderBooks(){
       return this.props.books.map((book) => (
-         <BookCard key={book._id} book={book}/>
+         <BookCard key={book._id} book={book} isAdmin={true}/>
       ));
    }
 }

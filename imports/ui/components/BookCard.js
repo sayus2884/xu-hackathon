@@ -8,6 +8,7 @@ class BookCard extends Component {
          <div className="col-lg-4">
                image here
                <h2>{book.title}</h2>
+               <h3>Stock: {book.stock}</h3>
 
                {this.renderButtons()}
          </div>
@@ -29,8 +30,9 @@ class BookCard extends Component {
       FlowRouter.go('/book/' + id);
    }
 
-   addStock(event){
+   addStock(id, event){
       event.preventDefault();
+      console.log('no logic yet');
    }
 }
 
