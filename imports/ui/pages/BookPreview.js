@@ -1,8 +1,8 @@
-import { Random } from 'meteor/random';
-
 import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Books } from '/imports/api/books';
+
+import BookPreviewTable from '../components/BookPreviewTable';
 
 class BookPreview extends Component {
    render(){
@@ -15,6 +15,8 @@ class BookPreview extends Component {
          <div>
             <h2>{book.title}</h2>
             <button onClick={this.goBack.bind(this)}>Go Back</button>
+
+            <BookPreviewTable books={book.books}/>
          </div>
       );
    }
