@@ -5,10 +5,22 @@ class BookCard extends Component {
       const book = this.props.book;
 
       return (
-         <div id="wrapper">
-            {book.title}
+         <div className="col-lg-4">
+               image here
+               <h2>{book.title}</h2>
+               <button onClick={this.goToPreview.bind(this, book._id)}>View Details</button>
          </div>
       );
+   }
+
+   goToPreview(id, event){
+      event.preventDefault();
+      FlowRouter.go('/book/' + id);
+   }
+
+   addStock(event){
+      event.preventDefault();
+      console.log('logic here');
    }
 }
 

@@ -14,8 +14,14 @@ class BookPreview extends Component {
       ) : (
          <div>
             <h2>{book.title}</h2>
+            <button onClick={this.goBack.bind(this)}>Go Back</button>
          </div>
       );
+   }
+
+   goBack(event){
+      event.preventDefault();
+      FlowRouter.go('/');
    }
 }
 

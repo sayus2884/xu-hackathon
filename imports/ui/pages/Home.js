@@ -14,21 +14,20 @@ class Home extends Component {
       return isLoading ? (
          <h2>Loading Books</h2>
       ) : (
-         <div>
-            <h2>Books</h2>
-            <ul>
-               {this.renderBooks()}
-            </ul>
+         <div className="row">
+            <div className='col-lg-12'>
+               <h2>Books</h2>
+            </div>
+
+            {this.renderBooks()}
+
          </div>
       );
    }
 
    renderBooks(){
       return this.props.books.map((book) => (
-         <li key={book._id}>
-            {book._id}
-            <BookCard book={book}/>
-         </li>
+         <BookCard key={book._id} book={book}/>
       ));
    }
 }

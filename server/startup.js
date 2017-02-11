@@ -16,21 +16,24 @@ Meteor.startup(() => {
                   _id: Random.id(),
                   price: 300,
                   owner: 'John Doe',
-                  isSold: false
+                  isSold: false,
+                  condition: 'Good'
 
                },
                {
                   _id: Random.id(),
                   price: 200,
                   owner: 'John Dow',
-                  isSold: false
+                  isSold: false,
+                  condition: 'Good'
 
                },
                {
                   _id: Random.id(),
                   price: 100,
                   owner: 'John Dough',
-                  isSold: false
+                  isSold: false,
+                  condition: 'Good'
 
                },
             ]
@@ -45,21 +48,24 @@ Meteor.startup(() => {
                   _id: Random.id(),
                   price: 300,
                   owner: 'John Doe',
-                  isSold: false
+                  isSold: false,
+                  condition: 'Good'
 
                },
                {
                   _id: Random.id(),
                   price: 200,
                   owner: 'John Dope',
-                  isSold: false
+                  isSold: false,
+                  condition: 'Good'
 
                },
                {
                   _id: Random.id(),
                   price: 100,
                   owner: 'John Dot',
-                  isSold: false
+                  isSold: false,
+                  condition: 'Good'
 
                },
             ]
@@ -74,21 +80,24 @@ Meteor.startup(() => {
                   _id: Random.id(),
                   price: 300,
                   owner: 'John Doe',
-                  isSold: false
+                  isSold: false,
+                  condition: 'Good'
 
                },
                {
                   _id: Random.id(),
                   price: 200,
                   owner: 'John Doe',
-                  isSold: false
+                  isSold: false,
+                  condition: 'Good'
 
                },
                {
                   _id: Random.id(),
                   price: 100,
                   owner: 'John Doe',
-                  isSold: false
+                  isSold: false,
+                  condition: 'Good'
 
                },
             ]
@@ -100,7 +109,7 @@ Meteor.startup(() => {
       books.map((book) => {
          Books.insert(book, function(err, bookId){
             if(bookId){
-               console.log('Server Startup: Created a new book instance:', book.title);
+               console.log('Server Startup: Created a new book instance:', book.name);
             } else {
                throw new Meteor.Error(err);
             }
