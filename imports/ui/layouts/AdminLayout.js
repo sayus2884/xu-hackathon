@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import TopNavbar from '../components/TopNavbar';
+import Footer from '../components/Footer';
 
 class AdminLayout extends Component {
    render(){
@@ -12,6 +13,8 @@ class AdminLayout extends Component {
                <TopNavbar />
 
                <div>{this.props.content}</div>
+
+               <Footer />
 
             </div>
 
