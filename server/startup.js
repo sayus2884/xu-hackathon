@@ -109,7 +109,7 @@ Meteor.startup(() => {
       books.map((book) => {
          Books.insert(book, function(err, bookId){
             if(bookId){
-               console.log('Server Startup: Created a new book instance:', book.name);
+               console.log('Server Startup: Created a new book instance:', book.title);
             } else {
                throw new Meteor.Error(err);
             }

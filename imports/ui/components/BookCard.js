@@ -8,8 +8,19 @@ class BookCard extends Component {
          <div className="col-lg-4">
                image here
                <h2>{book.title}</h2>
-               <button onClick={this.goToPreview.bind(this, book._id)}>View Details</button>
+
+               {this.renderButtons()}
          </div>
+      );
+   }
+
+   renderButtons(){
+      const book = this.props.book;
+
+      return this.props.isAdmin ? (
+         <button onClick={this.addStock.bind(this, book._id)}>Add Stock</button>
+      ) : (
+         <button onClick={this.goToPreview.bind(this, book._id)}>View Details</button>
       );
    }
 
@@ -20,7 +31,6 @@ class BookCard extends Component {
 
    addStock(event){
       event.preventDefault();
-      console.log('logic here');
    }
 }
 
