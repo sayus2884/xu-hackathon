@@ -1,85 +1,106 @@
-import { Milestones } from '../imports/api/milestones';
+import { Books } from '../imports/api/books';
 import { Random } from 'meteor/random';
 
 Meteor.startup(() => {
 
-   if (Milestones.find().count() === 0) {
+   if (Books.find().count() === 0) {
 
-      const gatheringId = Random.id(); // level 1
-      const craftingId = Random.id(); // level 1
+      const books = [
+         {
+            _id: Random.id(),
+            title: 'Harry Potter',
+            stock: 10,
+            Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            books: [
+               {
+                  _id: Random.id(),
+                  price: 300,
+                  owner: 'John Doe',
+                  isSold: false
 
-      const miningId = Random.id(); // level 2, req crafting
-      const fishingId = Random.id(); // level 2, req crafting
-      const huntingId = Random.id() // level 2, req gathering, crafting
+               },
+               {
+                  _id: Random.id(),
+                  price: 200,
+                  owner: 'John Dow',
+                  isSold: false
 
-      const constructionId = Random.id() // level 3, req mining
-      const smeltingId = Random.id(); // level 3, req mining
+               },
+               {
+                  _id: Random.id(),
+                  price: 100,
+                  owner: 'John Dough',
+                  isSold: false
 
-      const shipwrightId = Random.id(); // level 4, req construction, fishing
+               },
+            ]
+         },
+         {
+            _id: Random.id(),
+            title: 'Hardy Boys',
+            stock: 10,
+            Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            books: [
+               {
+                  _id: Random.id(),
+                  price: 300,
+                  owner: 'John Doe',
+                  isSold: false
 
-      const milestones = [
-         {
-            _id: gatheringId,
-            name: 'Gathering',
-            req: [],
-            position: 0,
-            completed: false
+               },
+               {
+                  _id: Random.id(),
+                  price: 200,
+                  owner: 'John Dope',
+                  isSold: false
+
+               },
+               {
+                  _id: Random.id(),
+                  price: 100,
+                  owner: 'John Dot',
+                  isSold: false
+
+               },
+            ]
          },
          {
-            _id: craftingId,
-            name: 'Crafting',
-            req: [],
-            position: 0,
-            completed: false
+            _id: Random.id(),
+            title: 'Star Trek',
+            stock: 10,
+            Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            books: [
+               {
+                  _id: Random.id(),
+                  price: 300,
+                  owner: 'John Doe',
+                  isSold: false
+
+               },
+               {
+                  _id: Random.id(),
+                  price: 200,
+                  owner: 'John Doe',
+                  isSold: false
+
+               },
+               {
+                  _id: Random.id(),
+                  price: 100,
+                  owner: 'John Doe',
+                  isSold: false
+
+               },
+            ]
          },
-         {
-            _id: miningId,
-            name: 'Mining',
-            req: [craftingId],
-            position: 1,
-            completed: false
-         },
-         {
-            _id: fishingId,
-            name: 'Fishing',
-            req: [craftingId],
-            position: 1,
-            completed: false
-         },
-         {
-            _id: huntingId,
-            name: 'Hunting',
-            req: [gatheringId],
-            position: 1,
-            completed: false
-         },
-         {
-            _id: constructionId,
-            name: 'Construction',
-            req: [craftingId, miningId],
-            position: 2,
-            completed: false
-         },
-         {
-            _id: smeltingId,
-            name: 'Smelting',
-            req: [craftingId, miningId],
-            position: 2,
-            completed: false
-         },
-         {
-            _id: shipwrightId,
-            name: 'Shipwright',
-            req: [craftingId, fishingId, constructionId],
-            position: 3,
-            completed: false
-         }
       ];
 
-      milestones.map((milestone) => {
-         Milestones.insert(milestone, function(err, milestoneId){
-            if(milestoneId){
-               console.log('Server Startup: Created new milestone', milestoneId, milestone.name);
+      console.log('creating new book instances...');
+
+      books.map((book) => {
+         Books.insert(book, function(err, bookId){
+            if(bookId){
+               console.log('Server Startup: Created a new book instance:', book.title);
             } else {
                throw new Meteor.Error(err);
             }

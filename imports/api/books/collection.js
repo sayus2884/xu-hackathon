@@ -1,9 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
-export const Milestones = new Mongo.Collection('milestones');
+export const Books = new Mongo.Collection('books');
 
-Milestones.allow({
+Books.allow({
    insert(userId, milestone) {
       return userId && milestone.owner === userId;
    },

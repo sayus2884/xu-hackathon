@@ -2,56 +2,40 @@ import { Random } from 'meteor/random';
 
 import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
-import { Milestones } from '/imports/api/milestones';
-
-import Level from '../components/Level';
+import { Books } from '/imports/api/books';
 
 class Home extends Component {
    render(){
-      const milestones = this.props.milestones;
+      const books = this.props.books;
       const isLoading = this.props.loading;
 
       return isLoading ? (
-         <h2>Loading Milestones</h2>
+         <h2>Loading Books</h2>
       ) : (
          <div>
-            <h2>Milestones</h2>
-            {this.renderMilestones()}
+            <h2>Books</h2>
+            <ul>
+               {this.renderBooks()}
+            </ul>
          </div>
       );
    }
 
-   renderMilestones(){
-      const milestones = this.props.milestones;
-
-      const filteredMilestones = this.separatingMilestonesByPosition(milestones);
-
-      return filteredMilestones.map((milestonesArr) => (
-         <Level key={Random.id()} milestones={milestonesArr} />
+   renderBooks(){
+      return this.props.books.map((book) => (
+         <li key={book._id}>
+            {book._id}
+         </li>
       ));
-   }
-
-   separatingMilestonesByPosition(milestones){
-      let milestonesArr = [];
-      milestones.map((milestone) => {
-
-         if (!milestonesArr[milestone.position]) {
-            milestonesArr[milestone.position] = [];
-         }
-
-         milestonesArr[milestone.position].push(milestone);
-      });
-
-      return milestonesArr;
    }
 }
 
 export default createContainer(() => {
-   const subscription = Meteor.subscribe('milestones');
+   const subscription = Meteor.subscribe('books');
 
    const loading = !subscription.ready();
-   const milestones = Milestones.find().fetch();
+   const books = Books.find().fetch();
 
-   return { loading, milestones  }
+   return { loading, books  }
 
 }, Home);
