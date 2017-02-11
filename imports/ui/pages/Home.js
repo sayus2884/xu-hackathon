@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Books } from '/imports/api/books';
 
+import BookCard from '../components/BookCard';
+
 class Home extends Component {
    render(){
       const books = this.props.books;
@@ -24,7 +26,7 @@ class Home extends Component {
    renderBooks(){
       return this.props.books.map((book) => (
          <li key={book._id}>
-            {book._id}
+            <BookCard book={book}/>
          </li>
       ));
    }
