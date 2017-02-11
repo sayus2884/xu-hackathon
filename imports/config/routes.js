@@ -6,12 +6,22 @@ import AdminLayout from '../ui/layouts/AdminLayout';
 
 import Home from '../ui/pages/Home';
 import Admin from '../ui/pages/Admin';
+import BookPreview from '../ui/pages/BookPreview';
 
 FlowRouter.route('/', {
    name: 'Books.show',
    action() {
       mount(MainLayout, {
          content: <Home/>
+      });
+   },
+});
+
+FlowRouter.route('/:id', {
+   name: 'Book.show',
+   action() {
+      mount(MainLayout, {
+         content: <BookPreview/>
       });
    },
 });
