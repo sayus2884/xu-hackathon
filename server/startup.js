@@ -10,6 +10,7 @@ Meteor.startup(() => {
             _id: Random.id(),
             title: 'Harry Potter',
             stock: 10,
+            imageUrl: 'http://prodimage.images-bn.com/pimages/9780545139700_p0_v4_s1200x630.jpg',
             Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             books: [
                {
@@ -42,6 +43,7 @@ Meteor.startup(() => {
             _id: Random.id(),
             title: 'Hardy Boys',
             stock: 10,
+            imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/914d9xLbgrL.jpg',
             Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             books: [
                {
@@ -74,6 +76,7 @@ Meteor.startup(() => {
             _id: Random.id(),
             title: 'Star Trek',
             stock: 10,
+            imageUrl: 'https://d202m5krfqbpi5.cloudfront.net/books/1327281304l/1120870.jpg',
             Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             books: [
                {

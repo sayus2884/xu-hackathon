@@ -6,7 +6,8 @@ class BookCard extends Component {
 
       return (
          <div className="col-lg-4">
-               image here
+               <img src={book.imageUrl}
+                  style={{height: '150px'}}/>
                <h2>{book.title}</h2>
                <h3>Stock: {book.stock}</h3>
 
