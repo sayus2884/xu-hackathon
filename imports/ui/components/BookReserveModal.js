@@ -46,7 +46,7 @@ class BookReserveModal extends Component {
    render() {
       return (
          <div>
-            <button onClick={this.openModal}>Add Stock</button>
+            <button onClick={this.openModal}>Reserve</button>
             <Modal
                isOpen={this.state.modalIsOpen}
                onAfterOpen={this.afterOpenModal}
@@ -55,7 +55,7 @@ class BookReserveModal extends Component {
                contentLabel="Example Modal"
                >
 
-               <h2 ref="subtitle">Hello</h2>
+               <h2 ref="subtitle">Input Your Name</h2>
                <Form
                   onSubmit={this.reserveBook.bind(this)}
                   >
