@@ -13,8 +13,8 @@ class BookCard extends Component {
                <img src={book.imageUrl}
                   style={{height: '150px'}}/>
                   <div className="caption">
-                    <h4 className="pull-right">$74.99</h4>
-                      <h4><a href="#">Third Product</a></h4>
+                    <h4 className="pull-right">{book.price}</h4>
+                      <h4><a onClick={this.goToPreview.bind(this, book._id)}>{book.title}</a></h4>
                     <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                   </div>
                <h3>Stock: {book.books.length}</h3>
@@ -32,7 +32,7 @@ class BookCard extends Component {
       return this.props.isAdmin ? (
          <button onClick={this.goToManage.bind(this, book._id)}>Manage</button>
       ) : (
-         <button onClick={this.goToPreview.bind(this, book._id)}>View Details</button>
+         <button className="btn btn-info" onClick={this.goToPreview.bind(this, book._id)}>View Details</button>
       );
    }
 
