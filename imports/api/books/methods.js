@@ -7,5 +7,7 @@ import { Books } from './collection';
 const _ = lodash;
 
 Meteor.methods({
-   
+   'books.insert'(book){
+     Books.insert(book)
+   }
 });
