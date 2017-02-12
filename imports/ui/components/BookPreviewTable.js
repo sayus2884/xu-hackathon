@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import ReactTable from 'react-table'
 
+import BookPushModal from './BookPushModal';
+
 class BookPreviewTable extends Component {
    render(){
       const books = this.props.books;
@@ -13,9 +15,11 @@ class BookPreviewTable extends Component {
          accessor: 'condition',
       }, {
          header: 'Action',
-         render: props => (
-            <button>Reserve</button>
-         )
+         render: props => {
+            return (
+               <button>Reserve Book</button>
+            )
+         }
       }]
 
       return (
