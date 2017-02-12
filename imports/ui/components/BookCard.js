@@ -9,7 +9,7 @@ class BookCard extends Component {
                <img src={book.imageUrl}
                   style={{height: '150px'}}/>
                <h2>{book.title}</h2>
-               <h3>Stock: {book.stock}</h3>
+               <h3>Stock: {book.books.length}</h3>
 
                {this.renderButtons()}
          </div>
