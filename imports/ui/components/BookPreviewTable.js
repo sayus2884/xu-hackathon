@@ -1,9 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 import ReactTable from 'react-table'
+import ReactDOM from 'react-dom'
 
 import BookPushModal from './BookPushModal';
 
 class BookPreviewTable extends Component {
+    constructor(props){
+      super(props)
+
+      this.state = {
+        reserved: false,
+        complete: false
+      }
+    }
+
    render(){
       const books = this.props.books;
 
@@ -16,14 +26,26 @@ class BookPreviewTable extends Component {
       }]
 
       if (this.props.isAdmin) {
-         columns.push({
-            header: 'Action',
-            render: props => {
-               return (
-                  <button>Reserve Book</button>
-               )
-            }
-         });
+        columns.push({
+          header: 'Action',
+          render: props => {
+            return (
+              <div>
+              <label>Reserved <input type="checkbox" ref="reserved" /></label>
+              <label>Transaction Complete <input type="checkbox" ref="complete" /></label>
+              </div>
+            )
+          }
+        })
+      }else{
+        columns.push({
+           header: 'Action',
+           render: props => {
+              return (
+                 <button>Reserve Book</button>
+              )
+           }
+        });
       }
 
       return (

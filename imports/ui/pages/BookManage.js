@@ -18,7 +18,7 @@ class BookManage extends Component {
             <BookPushModal book={book}/>
             <button onClick={this.goBack.bind(this)}>Go Back</button>
 
-            <BookPreviewTable books={book.books}/>
+            <BookPreviewTable books={book.books} isAdmin={true}/>
          </div>
       );
    }
