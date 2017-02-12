@@ -17,6 +17,7 @@ Meteor.startup(() => {
                   price: 300,
                   owner: 'John Doe',
                   isSold: false,
+                  isReceived: false,
                   condition: 'Good'
 
                },
@@ -25,6 +26,7 @@ Meteor.startup(() => {
                   price: 200,
                   owner: 'John Dow',
                   isSold: false,
+                  isReceived: false,
                   condition: 'Good'
 
                },
@@ -33,6 +35,7 @@ Meteor.startup(() => {
                   price: 100,
                   owner: 'John Dough',
                   isSold: false,
+                  isReceived: false,
                   condition: 'Good'
 
                },
@@ -49,6 +52,7 @@ Meteor.startup(() => {
                   price: 300,
                   owner: 'John Doe',
                   isSold: false,
+                  isReceived: false,
                   condition: 'Good'
 
                },
@@ -57,6 +61,7 @@ Meteor.startup(() => {
                   price: 200,
                   owner: 'John Dope',
                   isSold: false,
+                  isReceived: false,
                   condition: 'Good'
 
                },
@@ -65,6 +70,7 @@ Meteor.startup(() => {
                   price: 100,
                   owner: 'John Dot',
                   isSold: false,
+                  isReceived: false,
                   condition: 'Good'
 
                },
@@ -81,6 +87,7 @@ Meteor.startup(() => {
                   price: 300,
                   owner: 'John Doe',
                   isSold: false,
+                  isReceived: false,
                   condition: 'Good'
 
                },
@@ -89,6 +96,7 @@ Meteor.startup(() => {
                   price: 200,
                   owner: 'John Doe',
                   isSold: false,
+                  isReceived: false,
                   condition: 'Good'
 
                },
@@ -97,6 +105,7 @@ Meteor.startup(() => {
                   price: 100,
                   owner: 'John Doe',
                   isSold: false,
+                  isReceived: false,
                   condition: 'Good'
 
                },
