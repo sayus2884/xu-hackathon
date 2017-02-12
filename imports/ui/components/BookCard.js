@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import BookPushModal from './BookPushModal';
+
 class BookCard extends Component {
    render(){
       const book = this.props.book;
@@ -28,7 +30,7 @@ class BookCard extends Component {
       const book = this.props.book;
 
       return this.props.isAdmin ? (
-         <button onClick={this.addStock.bind(this, book._id)}>Add Stock</button>
+         <button onClick={this.goToManage.bind(this, book._id)}>Manage</button>
       ) : (
          <button onClick={this.goToPreview.bind(this, book._id)}>View Details</button>
       );
@@ -37,6 +39,11 @@ class BookCard extends Component {
    goToPreview(id, event){
       event.preventDefault();
       FlowRouter.go('/book/' + id);
+   }
+
+   goToManage(id, event){
+      event.preventDefault();
+      FlowRouter.go('/admin/book/' + id);
    }
 
    addStock(id, event){

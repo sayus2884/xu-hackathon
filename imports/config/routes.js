@@ -7,6 +7,7 @@ import AdminLayout from '../ui/layouts/AdminLayout';
 import Home from '../ui/pages/Home';
 import Admin from '../ui/pages/Admin';
 import BookPreview from '../ui/pages/BookPreview';
+import BookManage from '../ui/pages/BookManage';
 
 FlowRouter.route('/', {
    name: 'Books.show',
@@ -33,4 +34,13 @@ FlowRouter.route('/admin', {
          content: <Admin/>
       });
    },
+});
+
+FlowRouter.route('/admin/book/:id', {
+   name: 'Book.manage',
+   action() {
+      mount(MainLayout, {
+         content: <BookManage/>
+   });
+},
 });

@@ -9,5 +9,17 @@ const _ = lodash;
 Meteor.methods({
    'books.insert'(book){
      Books.insert(book)
+  },
+
+   'books.stockInsert'(bookId, book){
+      Books.update(bookId, {
+         $push: {
+            books: {
+               price: book.price,
+               condition: book.condition,
+               _id: Random.id()
+            }
+         }
+      })
    }
 });

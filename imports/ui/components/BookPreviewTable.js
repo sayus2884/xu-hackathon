@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import ReactTable from 'react-table'
 
+import BookPushModal from './BookPushModal';
+
 class BookPreviewTable extends Component {
    render(){
       const books = this.props.books;
@@ -11,12 +13,18 @@ class BookPreviewTable extends Component {
       }, {
          header: 'Condition',
          accessor: 'condition',
-      }, {
-         header: 'Action',
-         render: props => (
-            <button>Reserve</button>
-         )
       }]
+
+      if (this.props.isAdmin) {
+         columns.push({
+            header: 'Action',
+            render: props => {
+               return (
+                  <button>Reserve Book</button>
+               )
+            }
+         });
+      }
 
       return (
          <div className="col-lg-12">
