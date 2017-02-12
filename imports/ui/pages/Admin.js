@@ -33,8 +33,9 @@ class Admin extends Component {
         onSubmit={(values) => {
           Meteor.call('books.insert', {
             title: values.title,
-            stocks: values.stocks,
+            imageUrl: values.imageUrl,
             description: values.description,
+            books:[]
           })
         }}
         >
@@ -42,7 +43,7 @@ class Admin extends Component {
           return (
             <form onSubmit={submitForm}>
               <label>Title: <Text field='title' /></label>
-              <label>Stocks: <Text field='stocks' /></label>
+              <label>Image URL: <Text field='imageUrl' /></label>
               <label>Description: <Text field='description' /></label>
               <button type='submit'>Submit</button>
             </form>
