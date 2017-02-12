@@ -6,6 +6,8 @@ import BookPushModal from './BookPushModal';
 import BookReserveModal from './BookReserveModal';
 import BookCheckbox from './BookCheckbox'
 
+const _ = lodash;
+
 class BookPreviewTable extends Component {
     constructor(props){
       super(props)
@@ -38,9 +40,10 @@ class BookPreviewTable extends Component {
         columns.push({
           header: 'Reserved',
           render: props => {
-            return (
-              props.row.buyer ? (<h5>Reserved by {props.row.buyer}</h5>) : <h5></h5>
-            )
+            return !props.row.isReserved ? (
+                 <h5></h5>
+              ) : this.renderButton(props)
+
           }
         },{
           header: 'Transaction',
@@ -71,6 +74,22 @@ class BookPreviewTable extends Component {
                />
          </div>
       );
+   }
+
+   renderButton(props){
+      return (
+         <div>
+            <h5>Reserved by {props.row.buyer}</h5>
+            <button onClick={this.unreserve.bind(this, props)}>Unreserve</button>
+         </div>
+      );
+   }
+
+   unreserve(book, event){
+      event.preventDefault()
+      Meteor.call('books.reserve', FlowRouter.getParam('id'), _.assign({}, book.row, {
+         isReserved: false
+      }));
    }
 }
 
