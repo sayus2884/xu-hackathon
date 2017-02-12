@@ -10,6 +10,7 @@
     "react": "^15.4.2",
     "react-addons-pure-render-mixin": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-form": "^1.1.0",
     "react-mounter": "^1.2.0",
     "react-table": "^5.1.0"
   }
