@@ -29,5 +29,14 @@ Meteor.methods({
             'books.$': books
          }
       })
+   },
+
+   'book.completeTransac'(bookId, books){
+     console.log(books);
+     Books.update({ _id: bookId, 'books._id': books._id }, {
+        $set: {
+           'books.$': books
+        }
+     })
    }
 });

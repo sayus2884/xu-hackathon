@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 
 import BookPushModal from './BookPushModal';
 import BookReserveModal from './BookReserveModal';
+import BookCheckbox from './BookCheckbox'
 
 class BookPreviewTable extends Component {
     constructor(props){
@@ -31,16 +32,13 @@ class BookPreviewTable extends Component {
           header: 'Action',
           render: props => {
             return (
-              <div>
-              <label>Reserved <input type="checkbox" ref="reserved" /></label>
-              <label>Transaction Complete <input type="checkbox" ref="complete" /></label>
-              </div>
+              <BookCheckbox book={props.row}/>
             )
           }
         })
       }else{
         columns.push({
-           header: 'Action',
+           header: 'Transaction',
            render: props => {
 
               return (
