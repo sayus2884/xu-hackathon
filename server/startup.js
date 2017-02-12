@@ -17,7 +17,7 @@ Meteor.startup(() => {
                   price: 300,
                   owner: 'John Doe',
                   transactionCompleted: false,
-                  isReceived: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -26,7 +26,7 @@ Meteor.startup(() => {
                   price: 200,
                   owner: 'John Dow',
                   transactionCompleted: false,
-                  isReceived: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -35,7 +35,7 @@ Meteor.startup(() => {
                   price: 100,
                   owner: 'John Dough',
                   transactionCompleted: false,
-                  isReceived: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -52,7 +52,7 @@ Meteor.startup(() => {
                   price: 300,
                   owner: 'John Doe',
                   transactionCompleted: false,
-                  isReceived: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -61,7 +61,7 @@ Meteor.startup(() => {
                   price: 200,
                   owner: 'John Dope',
                   transactionCompleted: false,
-                  isReceived: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -70,7 +70,7 @@ Meteor.startup(() => {
                   price: 100,
                   owner: 'John Dot',
                   transactionCompleted: false,
-                  isReceived: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -87,7 +87,7 @@ Meteor.startup(() => {
                   price: 300,
                   owner: 'John Doe',
                   transactionCompleted: false,
-                  isReceived: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -96,7 +96,7 @@ Meteor.startup(() => {
                   price: 200,
                   owner: 'John Doe',
                   transactionCompleted: false,
-                  isReceived: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -105,7 +105,7 @@ Meteor.startup(() => {
                   price: 100,
                   owner: 'John Doe',
                   transactionCompleted: false,
-                  isReceived: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
