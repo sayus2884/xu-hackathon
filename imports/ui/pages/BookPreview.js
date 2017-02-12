@@ -10,7 +10,7 @@ class BookPreview extends Component {
       const isLoading = this.props.loading;
 
       return isLoading ? (
-         <h2>Loading Books</h2>
+         <img src="http://www.stackbuddy.com/wp-content/uploads/2014/08/loader.gif" style={{height: '150px'}}/>
       ) : (
          <div>
             <h2>{book.title}</h2>

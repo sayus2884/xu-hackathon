@@ -10,11 +10,16 @@ class AdminLayout extends Component {
 
             <div id="page-wrapper" className="gray-bg no-navigation">
 
-               <TopNavbar />
+                <TopNavbar />
+                 <div className="container">
+                   <div className="row">
+                     <div className="col-md-9">
+                       <div>{this.props.content}</div>
+                     </div>
+                   </div>
+                  </div>
+                <Footer />
 
-               <div>{this.props.content}</div>
-
-               <Footer />
 
             </div>
 
