@@ -45,7 +45,7 @@ class BookReserveModal extends Component {
    render() {
       return (
          <div>
-            <button onClick={this.openModal}>Reserve</button>
+            <button onClick={this.openModal}>Add Stock</button>
             <Modal
                isOpen={this.state.modalIsOpen}
                onAfterOpen={this.afterOpenModal}
@@ -62,8 +62,7 @@ class BookReserveModal extends Component {
                   {({submitForm}) => {
                      return (
                         <form onSubmit={submitForm}>
-                           <label>Price: <Text field='price' type='number'/></label>
-                           <label>Condition: <Text field='condition' /></label>
+                           <label>Name: <Text field='name' type='number'/></label>
                            <button type='submit'>Submit</button>
                         </form>
                      )
@@ -76,6 +75,8 @@ class BookReserveModal extends Component {
    }
 
    addBookToStock(values) {
+      console.log(this.state);
+
       Meteor.call('books.stockInsert', this.state.book._id, {
          price: values.price,
          condition: values.condition,

@@ -16,7 +16,8 @@ Meteor.startup(() => {
                   _id: Random.id(),
                   price: 300,
                   owner: 'John Doe',
-                  isSold: false,
+                  transactionCompleted: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -24,7 +25,8 @@ Meteor.startup(() => {
                   _id: Random.id(),
                   price: 200,
                   owner: 'John Dow',
-                  isSold: false,
+                  transactionCompleted: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -32,7 +34,8 @@ Meteor.startup(() => {
                   _id: Random.id(),
                   price: 100,
                   owner: 'John Dough',
-                  isSold: false,
+                  transactionCompleted: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -48,7 +51,8 @@ Meteor.startup(() => {
                   _id: Random.id(),
                   price: 300,
                   owner: 'John Doe',
-                  isSold: false,
+                  transactionCompleted: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -56,7 +60,8 @@ Meteor.startup(() => {
                   _id: Random.id(),
                   price: 200,
                   owner: 'John Dope',
-                  isSold: false,
+                  transactionCompleted: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -64,7 +69,8 @@ Meteor.startup(() => {
                   _id: Random.id(),
                   price: 100,
                   owner: 'John Dot',
-                  isSold: false,
+                  transactionCompleted: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -80,7 +86,8 @@ Meteor.startup(() => {
                   _id: Random.id(),
                   price: 300,
                   owner: 'John Doe',
-                  isSold: false,
+                  transactionCompleted: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -88,7 +95,8 @@ Meteor.startup(() => {
                   _id: Random.id(),
                   price: 200,
                   owner: 'John Doe',
-                  isSold: false,
+                  transactionCompleted: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
@@ -96,7 +104,8 @@ Meteor.startup(() => {
                   _id: Random.id(),
                   price: 100,
                   owner: 'John Doe',
-                  isSold: false,
+                  transactionCompleted: false,
+                  isReserved: false,
                   condition: 'Good'
 
                },
