@@ -29,7 +29,14 @@ class BookPreviewTable extends Component {
 
       if (this.props.isAdmin) {
         columns.push({
-          header: 'Action',
+          header: 'Reserved',
+          render: props => {
+            return (
+              props.row.buyer ? (<h5>Reserved by {props.row.buyer}</h5>) : <h5></h5>
+            )
+          }
+        },{
+          header: 'Transaction',
           render: props => {
             return (
               <BookCheckbox book={props.row}/>
@@ -38,7 +45,7 @@ class BookPreviewTable extends Component {
         })
       }else{
         columns.push({
-           header: 'Transaction',
+           header: 'Action',
            render: props => {
 
               return (
