@@ -13,14 +13,18 @@ class BookPreviewTable extends Component {
       }, {
          header: 'Condition',
          accessor: 'condition',
-      }, {
-         header: 'Action',
-         render: props => {
-            return (
-               <button>Reserve Book</button>
-            )
-         }
       }]
+
+      if (this.props.isAdmin) {
+         columns.push({
+            header: 'Action',
+            render: props => {
+               return (
+                  <button>Reserve Book</button>
+               )
+            }
+         });
+      }
 
       return (
          <div className="col-lg-12">
