@@ -3,6 +3,7 @@ import ReactTable from 'react-table'
 import ReactDOM from 'react-dom'
 
 import BookPushModal from './BookPushModal';
+import BookReserveModal from './BookReserveModal';
 
 class BookPreviewTable extends Component {
     constructor(props){
@@ -41,8 +42,9 @@ class BookPreviewTable extends Component {
         columns.push({
            header: 'Action',
            render: props => {
+
               return (
-                 <button>Reserve Book</button>
+                 <BookReserveModal book={props.row}/>
               )
            }
         });

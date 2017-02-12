@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 
 import { Form, Text } from 'react-form'
 
+const _ = lodash;
 
 const customStyles = {
    content : {
@@ -56,13 +57,13 @@ class BookReserveModal extends Component {
 
                <h2 ref="subtitle">Hello</h2>
                <Form
-                  onSubmit={this.addBookToStock.bind(this)}
+                  onSubmit={this.reserveBook.bind(this)}
                   >
 
                   {({submitForm}) => {
                      return (
                         <form onSubmit={submitForm}>
-                           <label>Name: <Text field='name' type='number'/></label>
+                           <label>Name: <Text field='name'/></label>
                            <button type='submit'>Submit</button>
                         </form>
                      )
@@ -74,13 +75,11 @@ class BookReserveModal extends Component {
       );
    }
 
-   addBookToStock(values) {
-      console.log(this.state);
-
-      Meteor.call('books.stockInsert', this.state.book._id, {
-         price: values.price,
-         condition: values.condition,
-      });
+   reserveBook(values) {
+      Meteor.call('books.reserve', FlowRouter.getParam('id'), _.assign({}, this.state.book, {
+         buyer: values.name,
+         isReserved: true
+      }));
    }
 }
 

@@ -21,5 +21,13 @@ Meteor.methods({
             }
          }
       })
+   },
+
+   'books.reserve'(bookId, books){
+      Books.update({ _id: bookId, 'books._id': books._id }, {
+         $set: {
+            'books.$': books
+         }
+      })
    }
 });
