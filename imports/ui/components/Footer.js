@@ -6,7 +6,7 @@ class Footer extends Component{
         <div id="wrapper">
           <div className="container">
 
-
+              <hr/>
               <footer>
                   <div className="row">
                       <div className="col-lg-12">
