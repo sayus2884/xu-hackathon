@@ -2,25 +2,33 @@ import React, { Component, PropTypes } from 'react';
 
 import BookPushModal from './BookPushModal';
 
+const _ = lodash;
+
 class BookCard extends Component {
    render(){
       const book = this.props.book;
+      let stock = this.props.book.books.length;
+
+      book.books.map((data) => {
+         if (data.isReserved) {
+            stock--;
+         }
+      });
 
       return (
 
          <div className="col-sm-4 col-lg-4 col-md-4">
-          <div className="thumbnail">
+            <div className="thumbnail">
                <img src={book.imageUrl}
                   style={{height: '150px'}}/>
-                  <div className="caption">
-                    <h4 className="pull-right">{book.price}</h4>
-                      <h4><a onClick={this.goToPreview.bind(this, book._id)}>{book.title}</a></h4>
-                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-               <h3>Stock: {book.books.length}</h3>
+               <div className="caption">
+                  <h4><a onClick={this.goToPreview.bind(this, book._id)}>{book.title}</a></h4>
+                  <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+               </div>
+               <h3>Stock: {stock}</h3>
 
                {this.renderButtons()}
-          </div>
+            </div>
          </div>
 
       );

@@ -18,6 +18,13 @@ class BookPreviewTable extends Component {
 
    render(){
       const books = this.props.books;
+      let booksArr = [];
+
+      books.map((book) => {
+         if (!book.isReserved) {
+            booksArr.push(book)
+         }
+      });
 
       const columns = [{
          header: 'Price',
@@ -58,7 +65,7 @@ class BookPreviewTable extends Component {
       return (
          <div className="col-lg-12">
             <ReactTable
-               data={books}
+               data={this.props.isAdmin ? books : booksArr}
                columns={columns}
                defaultPageSize="5"
                />

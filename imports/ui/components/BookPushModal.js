@@ -78,7 +78,7 @@ class BookReserveModal extends Component {
    addBookToStock(values) {
       Meteor.call('books.stockInsert', this.state.book._id, {
          price: values.price,
-         condition: values.condition,
+         condition: values.condition
       });
    }
 }
