@@ -50,5 +50,25 @@ body {
 }
 
 footer {
-    margin: 50px 0;
+    margin: 25px 0;
+}
+
+.navbar-nav > li > a {
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+
+.navbar-fixed-top {
+    min-height: 80px;
+}
+
+.navbar-fixed-top .navbar-collapse {
+    max-height: 80px;
+}
+
+@media (min-width: 768px) {
+    .navbar-fixed-top .navbar-collapse {
+        max-height: 50px;
+    }
 }
